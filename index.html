@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>My First Animation</title>
-
-    <!-- p5.js library -->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.min.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+    </style>
   </head>
-
   <body>
     <script>
       function setup() {
-        createCanvas(windowWith, windowHeight);
+        createCanvas(windowWidth, windowHeight);
       }
 
       function draw() {
-        background(30);
-        fill(255);
-        ellipse(mouseX, mouseY, 50, 50);
+        background(0);
+        ellipse(mouseX, mouseY, 80, 80);
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
       }
     </script>
   </body>
