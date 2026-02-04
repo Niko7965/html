@@ -133,7 +133,7 @@ function text_box(){
   textSize(15*font_factor)
   text("Lydia (Singer/Songwriter)",windowWidth/2,special_guests_y_2);
   text("Clara/Nimue (Singer/Songwriter)",windowWidth/2,special_guests_y_3);
-  text(""+windowWidth,windowWidth/2,special_guests_y_3+small_pad);
+  //text(""+windowWidth,windowWidth/2,special_guests_y_3+small_pad);
 
   
 
