@@ -33,7 +33,7 @@ function setup() {
   leaf_seq = [];
   leaf_gen_period = 5;
   for(let i = 0; i <= 100; i++){
-    leaf_seq.push(generate_leaf());
+    leaf_seq.push(generate_leaf_even());
   }
 
 }
@@ -54,7 +54,7 @@ function draw() {
   
   if(frame_no == leaf_gen_period){
     frame_no = 0;
-    leaf_seq.push(generate_leaf());
+    leaf_seq.push(generate_leaf_top());
   }
 
   text_box()
@@ -90,19 +90,19 @@ function text_box(){
 
   fill(255);
   textAlign(CENTER);
-  textSize(32);
+  textSize(40);
 
   textFont(font_title);
   let title_y = rect_top+small_pad;
   text("Been in Bloom",windowWidth/2,title_y);
 
-  textSize(14);
+  textSize(20);
   let subtitle_y = title_y+smaller_pad;
   text("- and friends",windowWidth/2,subtitle_y);
 
   imageMode(CENTER)
   
-  let image_y = subtitle_y + small_pad + image_height/3;
+  let image_y = subtitle_y + 1.5*small_pad + image_height/3;
 
 
   image(img,windowWidth/2,image_y,image_width,image_height)
@@ -112,7 +112,7 @@ function text_box(){
   let infos3_y = infos2_y+smaller_pad;
 
   textFont(font_text);
-  textSize(8);
+  textSize(14);
   text("What: Release Fest & Concert",windowWidth/2,infos1_y);
   text("Where: @Drop-inn - Telefonfabrikken - Gladsaxe",windowWidth/2,infos2_y);
   text("When: 21st of March",windowWidth/2,infos3_y);
@@ -124,9 +124,9 @@ function text_box(){
   let special_guests_y_3 = special_guests_y_2+smaller_pad;
 
   textFont(font_title);
-  textSize(14)
+  textSize(25)
   text("Special Guests:",windowWidth/2,special_guests_y_1);
-  textSize(10)
+  textSize(15)
   text("Lydia (Singer/Songwriter)",windowWidth/2,special_guests_y_2);
   text("Clara/Nimue (Singer/Songwriter)",windowWidth/2,special_guests_y_3);
 
@@ -134,8 +134,12 @@ function text_box(){
 
 }
 
-function generate_leaf(){
+function generate_leaf_top(){
   return new Leaf(rand_int(windowWidth*2),-10,random_color());
+}
+
+function generate_leaf_even(){
+  return new Leaf(rand_int(windowWidth*2),rand_int(windowHeight),random_color());
 }
 
 function windowResized() {
