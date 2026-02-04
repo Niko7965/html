@@ -41,7 +41,6 @@ function setup() {
 function draw() {
   frame_no++;
   background(0);
-  ellipse(mouseX, mouseY, 10, 10);
 
   for(let i = 0; i < leaf_seq.length; i++){
     let leaf = leaf_seq[i];
